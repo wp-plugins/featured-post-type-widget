@@ -1,26 +1,36 @@
-=== BNS Featured Category ===
-Contributors: cais
-Donate link: http://buynowshop.com
-Tags: posts, category, featured, multi-widget, user-options
-Requires at least: 2.8
+=== Featured Post Type ===
+Contributors: Ranjith Siji
+Author link: http://ranjith.zfs.in
+Plugin Link: http://ranjith.zfs.in/wordpress-plugin-featured-post-type/
+Tags: posts, category, featured, multi-widget, user-options, post type, ajax
+Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.7
+Stable tag: 1.0
 
-Displays most recent posts from a specific featured category or categories.
+Displays most recent posts from a specific post type and a drop down to select previous entries.
 
 == Description ==
 
-Plugin with multi-widget functionality that displays most recent posts from specific category or categories (set with user options). Also includes user options to display: Category Description; Author and meta details; comment totals; post categories; post tags; and either full post, excerpt, or your choice of the amount of words (or any combination).
+This plugin create a widget which will display a configured post type (From Custom Post Type – WordPress 3.0) with its featured image. You will also get a drop down list of post titles posted in that type. Select a post type and click go. Using Ajax it will load the selected content.
+
+You can use this plugin to display a post types with image . This plugin uses Jquery for ajax. It is working with wordpress 3.0 only. Because custom post type is introduced in wordpress 3.0
+
+I taken codes from
+
+BNS Featured Category Plugin
+
+Ajax Categories Posts Dropdown
 
 == Installation ==
 
 This section describes how to install the plugin and get it working.
 
-1. Upload `bns-featured-category.php` to the `/wp-content/plugins/` directory
+1. Upload `featured-post-type.zip` to the `/wp-content/plugins/` directory and extract
 2. Activate through the 'Plugins' menu.
-3. Place the BNS Featured Category widget appropriately in the Appearance | Widgets section of the dashboard.
+3. Place the Featured Post Type widget appropriately in the Appearance | Widgets section of the dashboard.
 4. Set options to personal preferences:
 * Widget Title
+* Post Type
 * Categories - separated by commas
 * Show (first) Category Description (checkbox)
 * Show Author and date/time details of post (checkbox)
@@ -32,12 +42,13 @@ This section describes how to install the plugin and get it working.
 
 1. Go to 'Plugins' menu under your Dashboard
 2. Click on the 'Add New' link
-3. Search for bns-featured-category
+3. Search for featured-post-type
 4. Install.
 5. Activate through the 'Plugins' menu.
-6. Place the BNS Featured Category widget appropriately in the Appearance | Widgets section of the dashboard.
+6. Place the Featured Post Type widget appropriately in the Appearance | Widgets section of the dashboard.
 7. Set options to personal preferences:
 * Widget Title
+* Post Type
 * Categories - separated by commas
 * Show (first) Category Description (checkbox)
 * Show Author and date/time details of post (checkbox)
@@ -60,20 +71,20 @@ The plugin uses several "common" WordPress functions that create standard class 
 * the plugin class `post-details` wraps the general meta details of the post, such as the Author, Categories, Tags, etc.
 * the overall plugin may also be wrapped in a widget "container" class, or id, specific to the theme itself such as (but not limited to): widget, sidebar, left, right, etc.
 
-With the addition of the display Category Description option an additional class was written into the plugin. To style the category description displayed add the class 'bnsfc-cat-desc' to your style.css file then use your choice of properties to style the text, for example:
+With the addition of the display Category Description option an additional class was written into the plugin. To style the category description displayed add the class 'fpt-cat-desc' to your style.css file then use your choice of properties to style the text, for example:
 `
-.bnsfc-cat-desc {font-style: italic;}
+.fpt-cat-desc {font-style: italic;}
 `
 
 = Can I increase the maximum posts to display? =
 
-As of version 1.6.2 the Total Posts to Display is independent of the "posts per page" setting as set under Settings | Reading.
+As of version 1.0 the Total Posts to Display is independent of the "posts per page" setting as set under Settings | Reading. But it is not fully implemented
 
 == Screenshots ==
 1. The options panel.
 
 == Other Notes ==
-* Copyright 2009-2010  Edward Caissie  (email : edward.caissie@gmail.com)
+* Copyright 2009-2010  Ranjith Siji  (email : ranjith.sajeev@gmail.com)
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
@@ -97,59 +108,6 @@ As of version 1.6.2 the Total Posts to Display is independent of the "posts per 
 Please stay current with your WordPress installation, your active theme, and your plugins.
 
 == Changelog ==
-= 1.7 =
-* compatible with WordPress version 3.0
-* updated license declaration
-
-= 1.6.3 =
-* removed the_ID() function as redundant
-* added category related span around widget title
-
-= 1.6.2.3 =
-* compatible with WordPress version 2.9.2
-* updated license declaration
-
-= 1.6.2.2 =
-* clarified the plugin's release under a GPL license
-
-= 1.6.2.1 =
-* compatibility check for 2.9.1 completed
-
-= 1.6.2 =
-* Total Posts to Display can now exceed the posts_per_page option value.
-
-= 1.6.1 =
-* Minor correction to variable structure to allow for multiple instances of the plugin with independent post counts
-
-= 1.6 =
-* added option to display the description for the (first) category choice as taken directly from the Categories panel under Posts in the Dashboard
-* wrapped Category Description in its own class: 'bnsfc-cat-desc'
-* corrected issue with checkboxes not displaying their state correctly
-* Updated the screenshot to show the most recent version of the options panel
-
-= 1.5.1 =
-* modified excerpt function name to make more unique to plugin
-
-= 1.5 =
-* added option to set the quantity of the first words of the post to display instead of the default excerpt.
-* modified description to reflect new functionality
-* slightly increased the size of option panel to better display controls
-
-= 1.4 =
-* added version control compared against $wp_version
-* added horizontal rule to option panel for clarity
-
-= 1.3 =
-* code cleanup and error trapping
-* added dynamic reference of maximum posts based on blog Settings | Reading "posts per page"
-
-= 1.2 =
-* code clean up
-* changed the_content(__('Read more ...')) to the_content() as a more "default" version
-
-= 1.1 =
-* added option for Post Titles only
-* added <div style="overflow-x: auto"> wrapper to allow for images wider than the widget area
 
 = 1.0 =
 * Initial Release.

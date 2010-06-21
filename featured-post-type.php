@@ -43,7 +43,7 @@ add_action('wp_head', 'jq_add_js');
 /*Function to add Jquery into the Engine */
 function jq_add_js()
 {
-	//	echo '<script type="text/javascript" src="'.get_bloginfo("url").'/wp-content/plugins/featured-post-type/js/jquery.min.js"></script>';
+		echo '<script type="text/javascript" src="'.get_bloginfo("url").'/wp-content/plugins/featured-post-type/js/jquery.min.js"></script>';
 		echo '<script type="text/javascript" src="'.get_bloginfo("url").'/wp-content/plugins/featured-post-type/js/featured.js"></script>';
 		
 }
