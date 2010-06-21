@@ -2,7 +2,7 @@
 define( "WP_INSTALLING", true );
 require ('../../../wp-blog-header.php');
 
-function get_first_words_for_fpt($text, $length = 55) {
+function get_first_words_for_fpt($text, $length = 28) {
 	if (!$length)
 		return $text;
 		

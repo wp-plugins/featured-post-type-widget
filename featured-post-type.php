@@ -7,7 +7,6 @@ Version: 1.0
 Author: Ranjith Siji
 Author URI: http://ranjith.zfs.in/
 License: GPL2
-* 
 */
 
 /*  Copyright 2009-2010  Ranjith Siji  (email : ranjith.siji@gmail.com)
@@ -32,7 +31,7 @@ License: GPL2
 */
 global $wp_version;
 $exit_message = 'Featured Post Type requires WordPress version 3.0 or newer.'.$wp_version.' <a href="http://codex.wordpress.org/Upgrading_WordPress">Please Update!</a>';
-if (version_compare($wp_version, "3.0", "<")) {
+if (version_compare($wp_version, "3.0-RC3", "<")) {
 	exit ($exit_message);
 }
 
@@ -102,6 +101,8 @@ class Featured_Post_Type_Widget extends WP_Widget {
   		$show_full		  = $instance['show_full'];
 		  $excerpt_length	= $instance['excerpt_length'];
 		  $count          = $instance['count']; /* Plugin requires counter variable to be part of its arguments?! */
+		
+		$instancettl = str_replace(' ','',$title);
 		  
 		  /* Before widget (defined by themes). */
   		echo $before_widget;
@@ -124,7 +125,7 @@ class Featured_Post_Type_Widget extends WP_Widget {
   			if ($count < $show_count) {
   			/*	break;
   			} else { */ ?>
-  				<div <?php post_class(); ?> id="pBox">
+  				<div <?php post_class(); ?> id="pBox_<?php echo $instancettl; ?>">
   				<?php //the_post_thumbnail( 'single-post-thumbnail' ); ?>
   				<?php the_post_thumbnail(); ?>
   					<strong><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to'); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></strong>
@@ -164,12 +165,12 @@ class Featured_Post_Type_Widget extends WP_Widget {
   			endwhile;
   			?>
   			
-  			<select id="pDrop" name="pDrop">
+  			<select id="pDrop_<?php echo $instancettl; ?>" name="pDrop_<?php echo $instancettl; ?>">
 				<option value="-1">Select <?php echo $post_choice; ?> </option>
 				<?php echo( $drop); ?>
   			</select>
-  				<input type="hidden" id="bUrl" value="<?php bloginfo("url"); ?>"
-  				<input type="button" id="pBtn" value="go"/>
+  				<input type="hidden" id="bUrl_<?php echo $instancettl ?>" value="<?php bloginfo("url"); ?>"
+  				<input type="button" id="pBtn" value="go" onclick="addContent('<?php echo $instancettl; ?>'); return false;"/>
   			<?php
   			else : 
   				_e('Yes, we have no taxonomies, or posts, today.');

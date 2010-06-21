@@ -1,14 +1,18 @@
 $(document).ready(function (){
 	$.ajaxSetup({cache:false});
-	$('#pBtn').click(function(){
+	
+});
+
+function addContent(holdId){
 		//alert ($("#bUrl").val());
-		var post_id = $("#pDrop").val();
-		var purl = $("#bUrl").val();
-		$("#pBox").html("loading...");
+		var post_id = $("#pDrop_"+holdId).val();
+		var purl = $("#bUrl_"+holdId).val();
+		var ht="<center><img src=\""+purl+"/wp-content/plugins/featured-post-type/ajax-loader.gif\" alt=\"Loading\" style=\"height:32px;width:32px;\" /><br/>Loading....</center>";
+		$("#pBox_"+holdId).html(ht);
 		//alert(purl+'/wp-content/plugins/featured-post-type/get-post.php?mainCats='+post_id);
 		
 		$.get (purl+'/wp-content/plugins/featured-post-type/get-post.php?mainCats='+post_id, function(data) {
-			$("#pBox").html(data);
+			$("#pBox_"+holdId).html(data);
 			//  alert(data);
 			});
 		
@@ -16,5 +20,4 @@ $(document).ready(function (){
 		
 
 		
-	});
-});
+	};

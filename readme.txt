@@ -5,7 +5,7 @@ Plugin Link: http://ranjith.zfs.in/wordpress-plugin-featured-post-type/
 Tags: posts, category, featured, multi-widget, user-options, post-type, ajax, post-type-widget
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Displays most recent posts from a specific post type and a drop down to select previous entries.
 
@@ -111,3 +111,10 @@ Please stay current with your WordPress installation, your active theme, and you
 
 = 1.0 =
 * Initial Release.
+
+= 1.0.1 =
+* Bug Fix Release.
+* Fixed Bugs of Multi instance Jquery Function
+* Added Instance ID to handle multi Instance Ajax.
+* Loading Image Added for more Good Inerface.
+
