@@ -2,7 +2,7 @@
 Contributors: Ranjith Siji
 Author link: http://ranjith.zfs.in
 Plugin Link: http://ranjith.zfs.in/wordpress-plugin-featured-post-type/
-Tags: posts, category, featured, multi-widget, user-options, post type, ajax
+Tags: posts, category, featured, multi-widget, user-options, post-type, ajax, post-type-widget
 Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: 1.0

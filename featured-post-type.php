@@ -7,6 +7,7 @@ Version: 1.0
 Author: Ranjith Siji
 Author URI: http://ranjith.zfs.in/
 License: GPL2
+* 
 */
 
 /*  Copyright 2009-2010  Ranjith Siji  (email : ranjith.siji@gmail.com)
@@ -31,7 +32,7 @@ License: GPL2
 */
 global $wp_version;
 $exit_message = 'Featured Post Type requires WordPress version 3.0 or newer.'.$wp_version.' <a href="http://codex.wordpress.org/Upgrading_WordPress">Please Update!</a>';
-if (version_compare($wp_version, "3.0-RC3", "<")) {
+if (version_compare($wp_version, "3.0", "<")) {
 	exit ($exit_message);
 }
 
